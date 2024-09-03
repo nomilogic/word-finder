@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Word Puzzle Solver</h1>
+
+  <label>Word Length (Optional):</label>
+  <input type="number" [(ngModel)]="wordLength" placeholder="e.g. 6">
+
+  <label>Including Letters (Optional):</label>
+  <input type="text" [(ngModel)]="includingLetters" placeholder="e.g. A, B">
+
+  <label>Excluding Letters (Optional):</label>
+  <input type="text" [(ngModel)]="excludingLetters" placeholder="e.g. C, D">
+
+  <label>Revealed Letters (Optional):</label>
+  <input type="text" [(ngModel)]="revealedLetters" placeholder="e.g. 1:A, 3:B">
+
+  <label>Included But Not Used On Position (Optional):</label>
+  <input type="text" [(ngModel)]="includedButNotUsedOnPosition" placeholder="e.g. 1:A, 3:B">
+
+  <button (click)="findWords()">Find Words</button>
+
+  <div *ngIf="possibleWords.length > 0">
+    <h2>Possible Words:</h2>
+    <ul>
+      <li *ngFor="let word of possibleWords">{{ word }}</li>
+    </ul>
+  </div>
+</div>
